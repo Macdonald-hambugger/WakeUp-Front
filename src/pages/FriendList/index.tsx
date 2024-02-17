@@ -7,8 +7,9 @@ const FriendList = () => {
 
   useEffect(() => {
     (async () => {
-      const res = await axios.post('http://192.168.10.81:8080/loadfriends');
-      setFriendList(res.data);
+      const res = await axios.get('http://192.168.10.81:8080/loadfriends');
+      console.log(res);
+      // setFriendList(res.data);
       /*
         id
         profile_nickname

@@ -1,11 +1,12 @@
 import { instance } from 'apis';
 import axios from 'axios';
 import React, { useEffect } from 'react';
-import { useLocation } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 
 const OAuth = () => {
   const params = useLocation();
+  const navigate = useNavigate();
   const code = params.search.replace('?code=', '');
 
   useEffect(() => {
@@ -28,6 +29,7 @@ const OAuth = () => {
 
       const result = await instance.post(`/signup/${res.data.access_token}`);
       localStorage.setItem('token', result.data.accessToken);
+      navigate('/');
     })();
   }, []);
 
