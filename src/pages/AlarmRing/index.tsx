@@ -4,7 +4,15 @@ import * as S from './style';
 const AlarmRing = () => {
   return (
     <S.Container>
-      <S.Square />
+      <S.Left src="/assets/ringring.png" alt="ring" />
+      <S.Bell autoPlay muted loop>
+        <source src="/assets/bell.mp4" type="video/mp4" />
+      </S.Bell>
+      <S.MessageTitle>
+        지금 일어나지 않으면 5분뒤에 <br />
+        카카오톡으로 "우빈"님에게 <br />
+        메세지가 전송되요!
+      </S.MessageTitle>
       <S.BottomContainer>
         <S.MyChat>
           <S.KakaoProfile src="/assets/kakao_profile.png" />
@@ -14,11 +22,6 @@ const AlarmRing = () => {
           </S.MyBox>
         </S.MyChat>
         <S.MessageBox>
-          <S.MessageTitle>
-            지금 일어나지 않으면 5분뒤에 카카오톡으로
-            <br />
-            "우빈"님에게 메세지가 전송되요!
-          </S.MessageTitle>
           <S.MessageButton>일어나기</S.MessageButton>
         </S.MessageBox>
       </S.BottomContainer>

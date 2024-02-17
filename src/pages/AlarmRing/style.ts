@@ -11,15 +11,6 @@ export const Container = styled.div`
   align-items: center;
 `;
 
-export const Square = styled.div`
-  width: 140px;
-  height: 140px;
-  position: fixed;
-  border-radius: 10px;
-  background-color: #2d2d2d;
-  top: 20%;
-`;
-
 export const BottomContainer = styled.div`
   width: 100%;
   display: flex;
@@ -68,10 +59,11 @@ export const MessageBox = styled.div`
 `;
 
 export const MessageTitle = styled.h1`
-  font-size: 16px;
+  font-size: 22px;
   font-weight: 600;
   color: white;
   text-align: center;
+  margin: 100px 0;
 `;
 
 export const MessageButton = styled.button`
@@ -83,4 +75,18 @@ export const MessageButton = styled.button`
   border-radius: 10px;
   font-size: 16px;
   font-weight: 700;
+`;
+
+export const Bell = styled.video`
+  position: fixed;
+  top: 20%;
+  width: 180px;
+  height: 180px;
+`;
+
+export const Left = styled.img`
+  position: fixed;
+  width: 180px;
+  top: 20%;
+  z-index: 1;
 `;
