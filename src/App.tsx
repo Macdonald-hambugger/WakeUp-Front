@@ -1,3 +1,4 @@
+import Home from 'pages/Home';
 import AlarmAdd from 'pages/AlarmAdd';
 import AlarmDetail from 'pages/AlarmDetail';
 import Login from 'pages/Login';
@@ -9,7 +10,7 @@ const App = () => {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={null} />
+        <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
         <Route path="/main" element={<Main />} />
         <Route path="/alarm">
