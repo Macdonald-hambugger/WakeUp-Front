@@ -6,6 +6,7 @@ import Main from 'pages/Main';
 import React from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import OAuth from 'pages/OAuth';
+import FriendList from 'pages/FriendList';
 
 const App = () => {
   return (
@@ -18,6 +19,7 @@ const App = () => {
         <Route path="/alarm">
           <Route path="add" element={<AlarmAdd />} />
           <Route path="detail" element={<AlarmDetail />} />
+          <Route path="friend-list" element={<FriendList />} />
         </Route>
       </Routes>
     </BrowserRouter>
