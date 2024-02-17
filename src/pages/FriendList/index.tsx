@@ -1,7 +1,22 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import * as S from './style';
+import axios from 'axios';
 
 const FriendList = () => {
+  const [friendList, setFriendList] = useState([]);
+
+  useEffect(() => {
+    (async () => {
+      const res = await axios.post('http://192.168.10.81:8080/loadfriends');
+      setFriendList(res.data);
+      /*
+        id
+        profile_nickname
+        profile_thumbnail_image
+      */
+    })();
+  }, []);
+
   return (
     <S.Container>
       <S.Header>
@@ -14,10 +29,10 @@ const FriendList = () => {
         <S.SearchLogo src="/assets/search.svg" />
       </S.SearchBox>
       <S.Friends>
-        {Array.from({ length: 20 }).map((_, i) => (
-          <S.FriendListItem key={i}>
-            <S.Profile src="/assets/profile.png" />
-            <S.ProfileText>김교수</S.ProfileText>
+        {friendList.map((data) => (
+          <S.FriendListItem key={data.id}>
+            <S.Profile src={data.profile_thumbnail_image} />
+            <S.ProfileText>{data.profile_nickname}</S.ProfileText>
           </S.FriendListItem>
         ))}
       </S.Friends>
