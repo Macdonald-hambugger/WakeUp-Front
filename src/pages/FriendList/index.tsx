@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import * as S from './style';
 import axios from 'axios';
 
-const FriendList = () => {
+const FriendList = ({ setOpen, onClick }) => {
   const [friendList, setFriendList] = useState([]);
 
   useEffect(() => {
@@ -22,7 +22,7 @@ const FriendList = () => {
     <S.Container>
       <S.Header>
         <S.ToolBox>
-          <S.CancelText>취소</S.CancelText>
+          <S.CancelText onClick={() => setOpen(false)}>취소</S.CancelText>
         </S.ToolBox>
       </S.Header>
       <S.SearchBox>
@@ -31,7 +31,12 @@ const FriendList = () => {
       </S.SearchBox>
       <S.Friends>
         {friendList.map((data) => (
-          <S.FriendListItem key={data.id}>
+          <S.FriendListItem
+            key={data.id}
+            onClick={() => {
+              onClick(data);
+            }}
+          >
             <S.Profile src={data.profile_thumbnail_image} />
             <S.ProfileText>{data.profile_nickname}</S.ProfileText>
           </S.FriendListItem>

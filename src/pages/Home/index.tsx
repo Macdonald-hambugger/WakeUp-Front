@@ -4,6 +4,7 @@ import Header from 'components/Header';
 import AlarmItem from 'components/AlarmItem';
 
 const Home = () => {
+  const list = JSON.parse(localStorage.getItem('list')) ?? [];
   return (
     <S.Container>
       <Header />
@@ -18,19 +19,26 @@ const Home = () => {
         <AlarmItem
           reciever="교수님"
           content="과제가 너무 많아요"
-          time={new Date()}
+          time={{
+            ampm: '오전',
+            hour: 6,
+            minute: 30,
+          }}
+          day={new Date()}
           weekday={['월', '일']}
           isWeekDay
           isMainAlarm
         />
         <S.AlarmOtherTitle>다른 알람들</S.AlarmOtherTitle>
         <S.AlarmList>
-          {Array.from({ length: 7 }).map((_, i) => (
+          {list.map((v, i) => (
             <AlarmItem
               key={i}
-              reciever="교수님"
-              content="과제가 너무 많아요"
-              time={new Date()}
+              reciever={v.sendTo.profile_nickname}
+              content={v.message}
+              day={v.date}
+              time={v.time}
+
               //   weekday={['월', '일']}
               //   isWeekDay
             />

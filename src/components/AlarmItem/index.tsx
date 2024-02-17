@@ -6,7 +6,12 @@ import 'dayjs/locale/ko';
 interface AlarmItemProps {
   reciever: string;
   content: string;
-  time: Date;
+  time: {
+    ampm: string;
+    hour: number;
+    minute: number;
+  };
+  day: Date;
   isWeekDay?: boolean;
   weekday?: Array<string>;
   isMainAlarm?: boolean;
@@ -16,6 +21,7 @@ const AlarmItem = ({
   reciever,
   content,
   time,
+  day,
   isWeekDay,
   weekday,
   isMainAlarm,
@@ -35,8 +41,11 @@ const AlarmItem = ({
       </S.AlarmHGroup>
       <S.DateBox>
         <S.DateTime>
-          {dayjs(time).locale('ko').format('A')}
-          <b>{dayjs(time).format('HH:MM')}</b>
+          {time.ampm}
+          <b>
+            {time.hour.toString().padStart(2, '0')}:
+            {time.minute.toString().padStart(2, '0')}
+          </b>
         </S.DateTime>
         {isWeekDay ? (
           <S.WeekDateList>
@@ -50,7 +59,7 @@ const AlarmItem = ({
             ))}
           </S.WeekDateList>
         ) : (
-          <S.DateText>{dayjs(time).format('M월 D일')}</S.DateText>
+          <S.DateText>{dayjs(day).format('M월 D일')}</S.DateText>
         )}
       </S.DateBox>
     </S.Container>
