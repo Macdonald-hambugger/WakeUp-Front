@@ -38,6 +38,7 @@ const Home = () => {
               content={v.message}
               day={v.date}
               time={v.time}
+              weekday={v.days}
 
               //   weekday={['월', '일']}
               //   isWeekDay

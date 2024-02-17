@@ -27,12 +27,15 @@ const AlarmItem = ({
   isMainAlarm,
 }: AlarmItemProps) => {
   const [isOn, setIsOn] = useState(false);
-
+  const newWeekDay = weekday && weekday.map((v: any) => v.key);
   return (
     <S.Container isOn={isOn}>
       <S.AlarmHGroup>
         <S.AlarmTitleBox>
-          <S.AlarmReciever>{reciever}에게</S.AlarmReciever>
+          <S.AlarmReciever>
+            {reciever}에게{' '}
+            <S.DateText>{dayjs(day).format('M월 D일')}</S.DateText>
+          </S.AlarmReciever>
           <S.AlarmContent isMainAlarm={isMainAlarm}>{content}</S.AlarmContent>
         </S.AlarmTitleBox>
         <S.Toggle onClick={() => setIsOn((prev) => !prev)}>
@@ -47,20 +50,17 @@ const AlarmItem = ({
             {time.minute.toString().padStart(2, '0')}
           </b>
         </S.DateTime>
-        {isWeekDay ? (
-          <S.WeekDateList>
-            {['월', '화', '수', '목', '금', '토', '일'].map((week) => (
-              <S.WeekDateListItem>
-                <S.WeekSelected isSelected={weekday.includes(week)} />
-                <S.WeekDay isSelected={weekday.includes(week)}>
-                  {week}
-                </S.WeekDay>
-              </S.WeekDateListItem>
-            ))}
-          </S.WeekDateList>
-        ) : (
-          <S.DateText>{dayjs(day).format('M월 D일')}</S.DateText>
-        )}
+
+        <S.WeekDateList>
+          {['월', '화', '수', '목', '금', '토', '일'].map((week) => (
+            <S.WeekDateListItem>
+              <S.WeekSelected isSelected={newWeekDay.includes(week)} />
+              <S.WeekDay isSelected={newWeekDay.includes(week)}>
+                {week}
+              </S.WeekDay>
+            </S.WeekDateListItem>
+          ))}
+        </S.WeekDateList>
       </S.DateBox>
     </S.Container>
   );

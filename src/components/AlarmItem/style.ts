@@ -29,14 +29,15 @@ export const AlarmTitleBox = styled.div`
 `;
 
 export const AlarmReciever = styled.span`
-  color: #9c9c9c;
-  font-size: 12px;
+  /*  color: #9c9c9c; */
+  color: white;
+  font-size: 16px;
   font-weight: 500;
 `;
 
 export const AlarmContent = styled.h1<{ isMainAlarm: boolean }>`
   color: white;
-  font-size: ${({ isMainAlarm }) => (isMainAlarm ? '24px' : '16px')};
+  font-size: ${({ isMainAlarm }) => (isMainAlarm ? '26px' : '20px')};
 `;
 
 export const Toggle = styled.div`
@@ -73,7 +74,7 @@ export const DateBox = styled.div`
 
 export const DateTime = styled.div`
   color: white;
-  font-size: 12px;
+  font-size: 16px;
   font-weight: 700;
   display: flex;
   justify-content: center;
@@ -82,13 +83,13 @@ export const DateTime = styled.div`
   b {
     margin-top: -4px;
     margin-left: 4px;
-    font-size: 24px;
+    font-size: 30px;
     font-weight: 600;
   }
 `;
 
 export const DateText = styled.span`
-  font-size: 11px;
+  font-size: 15px;
   font-weight: 500;
   color: white;
 `;
@@ -116,6 +117,6 @@ export const WeekSelected = styled.div<{ isSelected: boolean }>`
 `;
 
 export const WeekDay = styled.span<{ isSelected: boolean }>`
-  font-size: 11px;
+  font-size: 15px;
   color: ${({ isSelected }) => (isSelected ? 'white' : '#898989')};
 `;

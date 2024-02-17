@@ -11,6 +11,7 @@ const RoutePage = () => {
       <button onClick={() => navigate('/')}>알람 리스트</button>
       <button onClick={() => navigate('/alarm/add')}>알람 추가</button>
       <button onClick={() => navigate('/alarm/ring')}>알람 울림</button>
+      <button onClick={() => navigate('/empty')}>빈화면</button>
     </StyledButtonWrapper>
   );
 };
