@@ -9,7 +9,7 @@ const FriendList = () => {
     (async () => {
       const res = await axios.get('http://192.168.10.81:8080/loadfriends');
       console.log(res);
-      // setFriendList(res.data);
+      setFriendList(res.data.elements);
       /*
         id
         profile_nickname
