@@ -9,8 +9,8 @@ const Home = () => {
       <Header />
       <S.TitleBox>
         <S.Title>
-          내일 이시간에 못일어나면 <br />
-          메세지가 보내져요!
+          내일 이 시간에 못 일어나면 <br />
+          메시지가 보내져요!
         </S.Title>
         <S.CalendarIcon src="/assets/calendar.png" alt="calendar" />
       </S.TitleBox>
