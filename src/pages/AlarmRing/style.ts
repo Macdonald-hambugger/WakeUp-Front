@@ -27,7 +27,7 @@ export const MyTitle = styled.span`
 `;
 
 export const ChattingBox = styled.img`
-  height: 42px;
+  height: 50px;
   width: fit-content;
 `;
 
@@ -59,11 +59,11 @@ export const MessageBox = styled.div`
 `;
 
 export const MessageTitle = styled.h1`
-  font-size: 22px;
+  font-size: 25px;
   font-weight: 600;
   color: white;
   text-align: center;
-  margin: 100px 0;
+  margin: 50px 0 200px 0;
 `;
 
 export const MessageButton = styled.button`
@@ -80,8 +80,8 @@ export const MessageButton = styled.button`
 export const Bell = styled.video`
   position: fixed;
   top: 20%;
-  width: 180px;
-  height: 180px;
+  width: 250px;
+  height: 250px;
 `;
 
 export const Left = styled.img`

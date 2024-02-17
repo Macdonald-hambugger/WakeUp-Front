@@ -1,6 +1,7 @@
 import React from 'react';
 import * as S from './style';
 import { useNavigate } from 'react-router-dom';
+import styled from 'styled-components';
 
 const Header = () => {
   const navigate = useNavigate();
@@ -20,3 +21,5 @@ const Header = () => {
 };
 
 export default Header;
+
+const StyledModal = styled.div``;

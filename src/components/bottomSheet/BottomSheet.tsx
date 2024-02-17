@@ -50,6 +50,7 @@ const BottomSheet: React.FC<TProps> = ({
 export default BottomSheet;
 
 const StyledWrapper = styled.div<any>`
+  width: 500px;
   ${({ visible }) => {
     return css`
       position: relative;
@@ -58,7 +59,7 @@ const StyledWrapper = styled.div<any>`
         position: fixed;
         top: 0;
         left: 0;
-        width: 100%;
+        width: 500px;
         height: 100%;
         background: rgba(0, 0, 0, 0.5);
         z-index: 1000;
@@ -68,7 +69,7 @@ const StyledWrapper = styled.div<any>`
       .sheet-container {
         position: fixed;
         bottom: 0;
-        width: 100%;
+        width: 500px;
         max-width: 664px;
         border-radius: 20px 20px 0 0;
         background-color: #1b1b1b;

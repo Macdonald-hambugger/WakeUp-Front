@@ -1,7 +1,9 @@
 import React from 'react';
 import * as S from './style';
+import { useNavigate } from 'react-router-dom';
 
 const AlarmRing = () => {
+  const navigate = useNavigate();
   return (
     <S.Container>
       <S.Left src="/assets/ringring.png" alt="ring" />
@@ -22,7 +24,9 @@ const AlarmRing = () => {
           </S.MyBox>
         </S.MyChat>
         <S.MessageBox>
-          <S.MessageButton>일어나기</S.MessageButton>
+          <S.MessageButton onClick={() => navigate('/')}>
+            일어나기
+          </S.MessageButton>
         </S.MessageBox>
       </S.BottomContainer>
     </S.Container>

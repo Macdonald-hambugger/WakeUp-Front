@@ -1,7 +1,7 @@
 import AlarmConfigForm from 'components/alarmConfigForm/AlarmConfigForm';
 import CustomButton from 'components/alarmConfigForm/CustomButton';
 import TimeSelector from 'components/timeSelector/TimeSelector';
-import { alarmListState, tempState } from 'context/atom';
+import { tempState } from 'context/atom';
 import dayjs from 'dayjs';
 import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
@@ -94,7 +94,7 @@ const StyledWrapper = styled.div`
     position: fixed;
     background-color: black;
     bottom: 0px;
-    width: 100%;
+    width: 500px;
     padding: 16px;
     margin-top: 12px;
     display: flex;
