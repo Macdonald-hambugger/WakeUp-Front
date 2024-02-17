@@ -1,11 +1,8 @@
+import { instance } from 'apis';
 import axios from 'axios';
 import React, { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
-
-const instance = axios.create({
-  baseURL: 'http://192.168.10.81:8080',
-  withCredentials: false,
-});
+import styled from 'styled-components';
 
 const OAuth = () => {
   const params = useLocation();
@@ -30,11 +27,17 @@ const OAuth = () => {
       console.log(res);
 
       const result = await instance.post(`/signup/${res.data.access_token}`);
-      console.log(result);
+      localStorage.setItem('token', result.data.accessToken);
     })();
   }, []);
 
-  return <div></div>;
+  return <Container />;
 };
+
+const Container = styled.div`
+  width: 100%;
+  height: 100vh;
+  background-color: black;
+`;
 
 export default OAuth;
