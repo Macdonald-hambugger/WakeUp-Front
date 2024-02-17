@@ -7,6 +7,7 @@ import React from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import OAuth from 'pages/OAuth';
 import FriendList from 'pages/FriendList';
+import AlarmRing from 'pages/AlarmRing';
 
 const App = () => {
   return (
@@ -17,6 +18,7 @@ const App = () => {
         <Route path="/main" element={<Main />} />
         <Route path="/oauth" element={<OAuth />} />
         <Route path="/alarm">
+          <Route path="ring" element={<AlarmRing />} />
           <Route path="add" element={<AlarmAdd />} />
           <Route path="detail" element={<AlarmDetail />} />
           <Route path="friend-list" element={<FriendList />} />
