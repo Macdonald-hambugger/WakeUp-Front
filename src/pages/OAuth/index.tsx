@@ -13,8 +13,24 @@ const OAuth = () => {
 
   useEffect(() => {
     (async () => {
-      const res = await instance.post(`/signup/${code}`);
+      const res = await axios.post(
+        'https://kauth.kakao.com/oauth/token',
+        {
+          grant_type: 'authorization_code',
+          client_id: 'a70ee38977223dbfad44a14a6f3b2922',
+          redirect_uri: 'http://localhost:3000/oauth',
+          code,
+        },
+        {
+          headers: {
+            'Content-type': 'application/x-www-form-urlencoded;charset=utf-8',
+          },
+        }
+      );
       console.log(res);
+
+      const result = await instance.post(`/signup/${res.data.access_token}`);
+      console.log(result);
     })();
   }, []);
 
